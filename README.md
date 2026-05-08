@@ -13,9 +13,8 @@
 6. Технологический стек
 7. Установка и запуск
 8. API эндпоинты
-9. Структура проекта
-10. Результаты модели
-11. Планы развития
+9. Результаты модели
+10. Планы развития
 
 
 ## Описание проекта
@@ -246,57 +245,6 @@ POST    | /api/analyze    | Анализ изображения
 GET     | /api/history          | Получение истории анализов
 DELETE  | /api/history/{id}     | Удаление записи из истории
 
-
-## Структура проекта
-
-AiSkin/
-├── backend/
-│   ├── app/
-│   │   ├── web_app.py              # FastAPI приложение
-│   │   ├── skin_analyzer.py        # Обёртка модели + Grad-CAM
-│   │   ├── rxnorm_api.py           # Интеграция с RxNorm
-│   │   ├── smart_parser.py         # Генератор лечения
-│   │   ├── drug_data.json          # База лекарственных средств
-│   │   ├── history_manager.py      # Управление историей
-│   │   ├── ingredient_analyzer.py  # Анализ ингредиентов
-│   │   └── product_comparator.py   # Сравнение продуктов
-│   └── requirements.txt
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── UploadArea.tsx      # Загрузка изображений
-│   │   │   ├── Results.tsx         # Отображение результатов
-│   │   │   ├── ProbabilityBar.tsx  # Полоса вероятностей
-│   │   │   ├── ImageAnnotator.tsx  # Разметка изображения
-│   │   │   ├── BoxDetailsModal.tsx # Модальное окно
-│   │   │   └── ProductCard.tsx     # Карточка продукта
-│   │   ├── services/
-│   │   │   └── api.ts              # API клиент
-│   │   ├── types/
-│   │   │   └── index.ts            # TypeScript типы
-│   │   ├── App.tsx
-│   │   ├── App.css
-│   │   └── main.tsx
-│   ├── package.json
-│   └── vite.config.ts
-│
-├── skin_model/                     # Модель и обучение
-│   ├── model.py                    # Архитектура EfficientNet-B0
-│   ├── train.py                    # Скрипт обучения
-│   ├── dataset.py                  # Датасет и аугментации
-│   ├── predict.py                  # Инференс
-│   └── test.py                     # Тестирование
-│
-├── saved_models/                   # Обученные веса
-│   ├── final_model.pth
-│   ├── classification_report.json
-│   └── confusion_matrix.png
-│
-└── data/                          # Датасет с изображениями
-    ├── train/
-    ├── val/
-    └── test/
 
 
 ## Результаты модели
